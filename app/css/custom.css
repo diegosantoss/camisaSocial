@@ -1,0 +1,21 @@
+body {
+  background: #FFF; }
+
+h1 {
+  color: #000;
+  font-family: oswaldregular; }
+
+h4 {
+  color: #A1A1A1;
+  font-family: nixieregular; }
+
+.ContentOne {
+  padding: 0px; }
+  .ContentOne .camisa {
+    background: red; }
+
+.bg-ContentSecond {
+  background-color: #D3D3D3; }
+
+.ContentSecond {
+  height: 600px; }

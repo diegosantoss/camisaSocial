@@ -23,5 +23,5 @@ $(document).ready(function(){
 			$('.content-one').css({'height': hgMobile + 'px', 'margin-top' : ''});
 			$('.hg-screen').css({'height': ''});
 		}	
-	}
+	} 
 });

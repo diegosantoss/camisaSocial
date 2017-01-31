@@ -53,7 +53,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('chm', function (){
-    gulp.src('app/scss/**/*.scss')
+    gulp.src('app/')
         .pipe(chmod({
             owner: {
                 read: true,

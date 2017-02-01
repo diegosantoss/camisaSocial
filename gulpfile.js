@@ -10,7 +10,6 @@ var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
-const chmod = require('gulp-chmod');
  
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
@@ -52,27 +51,9 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('dist/fonts'))
 });
 
-gulp.task('chm', function (){
-    gulp.src('app/')
-        .pipe(chmod({
-            owner: {
-                read: true,
-                write: true,
-                execute: true
-            },
-            group: {
-                execute: true
-            },
-            others: {
-                execute: true
-            }
-        }))
-        .pipe(gulp.dest('app/css'))
-});
 
 gulp.task('watch', ['sass','browserSync'], function (){
   gulp.watch('app/scss/**/*.scss', ['sass']); 
-  // gulp.watch(['app/*.html','app/js/**/*.js','app/css/**/*.css'], ['useref']); 
   gulp.watch(['app/*.html','app/js/**/*.js'], browserSync.reload); 
 });
 
@@ -81,7 +62,7 @@ gulp.task('clean:dist', function() {
 })
 
 gulp.task('build', function(callback) {
-  runSequence(['chm', 'clean:dist','sass'],
+  runSequence(['clean:dist','sass'],
     ['useref','images','fonts'],
     callback
   )

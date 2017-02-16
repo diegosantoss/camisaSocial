@@ -145,6 +145,29 @@ h4.sub-title {
 .hr-medida {
   border-top: 1px solid #f0f0f0; }
 
+.nav-hover {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 99999; }
+
+.nav-hover > #menu-nav {
+  display: block;
+  transition: all .5s;
+  top: -60px; }
+
+.nav-hover:hover > #menu-nav {
+  transition: all .5s;
+  top: 0; }
+
+.click-menu {
+  cursor: pointer; }
+
+@media (max-width: 767px) {
+  .nav-hover > #menu-nav {
+    display: block;
+    top: 0px; } }
+
 @media (max-width: 991px) {
   h1 {
     text-align: center; }

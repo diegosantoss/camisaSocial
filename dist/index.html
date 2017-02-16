@@ -35,7 +35,32 @@
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-	<section class="container hg-screen">
+	<!-- barra navegacao -->
+	<section class="nav-hover">
+		<nav class="navbar navbar-default" style="margin-bottom: 0px;" id="menu-nav">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+					<span class="sr-only">Alternar Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">LOGO</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="barra-navegacao">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a rel="inicio" class="click-menu">Início</a></li>
+						<li><a rel="descricao" class="click-menu">Descrição</a></li>
+						<li><a rel="como-medir" class="click-menu">Como Medir</a></li>
+						<li><a rel="cuidados" class="click-menu">Cuidados</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</section>
+	<section id="inicio" class="container hg-screen">
 		<section class="row">
 			<section class="col-md-12 content-one">
 				<section class="col-md-6 col-xs-12 especificacao">
@@ -53,7 +78,7 @@
 			</section>									
 		</section>
 	</section>
-	<section class="bg-content-two">
+	<section id="descricao" class="bg-content-two">
 		<section class="container">
 			<section class="row">
 				<section class="col-md-12 content-two">
@@ -78,7 +103,7 @@
 			</section>		
 		</section>		
 	</section>
-	<section class="container">
+	<section id="como-medir" class="container">
 		<section class="row">
 			<section class="col-md-12 content-third">
 				<section class="col-md-12">
@@ -180,7 +205,7 @@
 		</section>
 	</section>
 
-	<section class="bg-content-four">
+	<section id="cuidados" class="bg-content-four">
 		<section class="container">
 			<section class="row">
 				<section class="col-md-12 content-four">
@@ -232,6 +257,16 @@
 
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('.click-menu').on('click', function(){
+      var scroolLink = $('#' + $(this).attr('rel')).offset().top;
+      $('html, body').animate({scrollTop: scroolLink}, 'slow');
+    });
+  });
+
+  </script>
 
 </body>
 </html>
